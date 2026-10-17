@@ -1,36 +1,36 @@
 # Rudheer Kudupudi — React Portfolio
 
-A responsive personal portfolio built with React and Vite for the **Beginner UI/UX portfolio task**.
+Responsive personal portfolio built with React and Vite for the Beginner UI/UX portfolio task.
 
-## Included
+## Included task elements
 
 - Home / introduction
-- About
-- Skills / tools
-- Selected projects (concepts are labelled honestly)
-- Contact section with email, GitHub and LinkedIn links
-- Responsive styling for desktop, tablet and mobile
-- React + Vite production build
-- GitHub Actions workflow that deploys the built `dist/` folder to GitHub Pages
+- About section
+- Skills and tools
+- Selected projects, with concepts clearly labelled as concepts/work in progress
+- Contact section with a message form, email, GitHub, and LinkedIn
+- Form validation, sending state, and success/error feedback
+- Responsive desktop, tablet, and mobile styling
+- Semantic form labels, keyboard-focus styling, readable contrast, and reduced-motion support
+- Production build and GitHub Actions workflow deploying Vite's generated `dist/` directory to GitHub Pages
 
-The contact **form is intentionally not included**; the contact section uses direct email and social links instead.
+## Contact form email delivery
 
-## Publish to `Rudheer09/Rudheer-Portfolio`
+The form uses FormSubmit's AJAX endpoint to send messages to `rudheerkudupudi@gmail.com`. This is a third-party form-to-email service; no email password or API key is placed in the frontend.
+
+**One-time setup is required:** after deployment, submit a test message from the live form. FormSubmit may send an activation/confirmation email to `rudheerkudupudi@gmail.com`. Open that email and confirm the form. Check spam/junk if it does not arrive. Until the service is activated, email delivery may not work. Test the form again after activation. The website displays a success or error message, and the email link remains available as a fallback.
+
+## Deploy to GitHub Pages
 
 1. Extract this ZIP.
-2. Open the inner `Rudheer_React_Portfolio` folder.
-3. In the GitHub repository `https://github.com/Rudheer09/Rudheer-Portfolio`, remove the old portfolio source files and any old Pages deployment workflows that could publish over this one. Keep unrelated project files only if you know they are needed; there should be just one workflow deploying GitHub Pages.
-4. Upload the **contents** of this folder to the repository root. The root must contain `index.html`, `package.json`, `vite.config.js`, `src/`, and `.github/workflows/deploy.yml`.
-5. Commit the changes to the `main` branch.
-6. Open **Settings → Pages** and set **Source** to **GitHub Actions**.
-7. Open **Actions** and wait for **Deploy React Portfolio to GitHub Pages** to finish with a green check.
-8. Click the site URL from the successful deployment, or open `https://rudheer09.github.io/Rudheer-Portfolio/`.
+2. Upload the contents of the inner `Rudheer_React_Portfolio` folder to the root of `https://github.com/Rudheer09/Rudheer-Portfolio`. The root should contain `index.html`, `package.json`, `vite.config.js`, `src/`, and `.github/workflows/deploy.yml`.
+3. Remove any other GitHub Pages deployment workflow that might overwrite this one; keep this single Pages workflow.
+4. Commit the changes to `main`.
+5. In **Settings → Pages**, choose **GitHub Actions** as the source.
+6. In **Actions**, wait for **Deploy React Portfolio to GitHub Pages** to complete successfully.
+7. Open `https://rudheer09.github.io/Rudheer-Portfolio/` and test the navigation, mobile layout, links, and contact form.
 
-## Important troubleshooting
-
-- Do **not** publish the source `index.html` directly from the branch. The included workflow builds the app and deploys only the generated `dist/` directory.
-- If the website shows plain unstyled HTML, check that the latest successful workflow is **Deploy React Portfolio to GitHub Pages** and disable/delete other workflows that deploy Pages. A second workflow can overwrite the correct React deployment.
-- Vite creates hashed CSS/JS asset filenames for each production build, so updated asset URLs change with the build. Visitors should not need to hard-refresh for each update.
+Vite generates hashed CSS and JavaScript asset names for each production build. The workflow deploys the generated production output rather than the source HTML.
 
 ## Local development
 
@@ -39,14 +39,14 @@ npm install
 npm run dev
 ```
 
-## Production build
+## Verify a production build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Links
+## Profile links
 
 - Email: rudheerkudupudi@gmail.com
 - GitHub: https://github.com/Rudheer09

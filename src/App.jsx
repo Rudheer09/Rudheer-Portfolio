@@ -12,6 +12,9 @@ const skills = ['HTML & CSS', 'JavaScript', 'React', 'Java', 'Git & GitHub', 'Py
 function App() {
   const [copied, setCopied] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
+  const [formStatus, setFormStatus] = useState({ type: '', message: '' })
+  const [sending, setSending] = useState(false)
   const copyEmail = async () => {
     try {
       await navigator.clipboard.writeText(EMAIL)
@@ -22,6 +25,37 @@ function App() {
     }
   }
   const closeMenu = () => setMenuOpen(false)
+  const updateForm = (event) => setForm({ ...form, [event.target.name]: event.target.value })
+  const submitContact = async (event) => {
+    event.preventDefault()
+    setSending(true)
+    setFormStatus({ type: '', message: '' })
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject || 'Portfolio contact message',
+          message: form.message,
+          _subject: `Portfolio contact: ${form.subject || 'New message'}`,
+          _template: 'table',
+          _captcha: 'true',
+        }),
+      })
+      const result = await response.json()
+      if (!response.ok || String(result.success).toLowerCase() === 'false' || result.success === 0) {
+        throw new Error(result.message || 'The message could not be sent. Please try again or email me directly.')
+      }
+      setFormStatus({ type: 'success', message: 'Thanks! Your message was sent. I’ll get back to you soon.' })
+      setForm({ name: '', email: '', subject: '', message: '' })
+    } catch (error) {
+      setFormStatus({ type: 'error', message: error.message || 'Could not send the message. Please email me directly at ' + EMAIL + '.' })
+    } finally {
+      setSending(false)
+    }
+  }
 
   return <>
     <div className="grain" aria-hidden="true" />
@@ -76,7 +110,23 @@ function App() {
       </section>
 
       <section className="section wrap contact-section" id="contact">
-        <div className="contact-panel"><div className="contact-left"><div className="section-label"><span>04</span> / CONTACT</div><h2>Have an idea?<br/><span>Let’s make it real.</span></h2><p>I’m open to learning opportunities, meaningful collaborations, and conversations about technology.</p><div className="contact-actions"><a className="button button-primary" href={`mailto:${EMAIL}`}><Mail size={16}/> Open email app <ArrowUpRight size={15}/></a><button className="button button-copy" onClick={copyEmail}>{copied ? <Check size={16}/> : <Copy size={16}/>} {copied ? 'Email copied!' : 'Copy email address'}</button></div></div><div className="contact-right"><div className="contact-monogram">R<span>.</span></div><p>LET’S BUILD SOMETHING USEFUL.</p><div className="social-links"><a href="https://github.com/Rudheer09" target="_blank" rel="noreferrer">GitHub <ExternalLink size={14}/></a><a href="https://www.linkedin.com/in/rudheer-kudupudi-7837b241b" target="_blank" rel="noreferrer">LinkedIn <ExternalLink size={14}/></a></div></div></div>
+        <div className="section-label"><span>04</span> / CONTACT</div>
+        <div className="contact-heading"><h2>Have an idea?<br/><span>Let’s make it real.</span></h2><p>I’m open to learning opportunities, meaningful collaborations, and conversations about technology. Send me a message using the form below.</p></div>
+        <div className="contact-panel">
+          <div className="contact-left"><div className="contact-form-intro"><Mail size={19}/><span>Send a message<small>Fields marked * are required.</small></span></div>
+            <form className="contact-form" onSubmit={submitContact}>
+              <div className="form-row">
+                <label>Your name *<input name="name" value={form.name} onChange={updateForm} autoComplete="name" required maxLength={100} placeholder="Jane Smith" /></label>
+                <label>Your email *<input name="email" type="email" value={form.email} onChange={updateForm} autoComplete="email" required maxLength={254} placeholder="jane@example.com" /></label>
+              </div>
+              <label>Subject<input name="subject" value={form.subject} onChange={updateForm} maxLength={150} placeholder="What would you like to discuss?" /></label>
+              <label>Message *<textarea name="message" value={form.message} onChange={updateForm} required minLength={10} maxLength={5000} rows={5} placeholder="Write your message here..." /></label>
+              <div className="form-submit-row"><button className="button button-primary" type="submit" disabled={sending}>{sending ? 'Sending…' : 'Send message'} <ArrowUpRight size={16}/></button><span className="form-privacy">Your message will be emailed to Rudheer.</span></div>
+              {formStatus.message && <p className={`form-status ${formStatus.type}`} role="status" aria-live="polite">{formStatus.message}</p>}
+            </form>
+          </div>
+          <aside className="contact-right"><div className="contact-monogram">R<span>.</span></div><p>LET’S BUILD SOMETHING USEFUL.</p><div className="contact-details"><span>Email</span><a href={`mailto:${EMAIL}`}>{EMAIL}</a></div><div className="social-links"><a href="https://github.com/Rudheer09" target="_blank" rel="noreferrer">GitHub <ExternalLink size={14}/></a><a href="https://www.linkedin.com/in/rudheer-kudupudi-7837b241b" target="_blank" rel="noreferrer">LinkedIn <ExternalLink size={14}/></a></div><button className="button button-copy" onClick={copyEmail}>{copied ? <Check size={16}/> : <Copy size={16}/>} {copied ? 'Email copied!' : 'Copy email address'}</button></aside>
+        </div>
       </section>
     </main>
     <footer className="footer wrap"><a className="footer-brand" href="#home">R<span>.</span></a><span>DESIGNED & BUILT BY RUDHEER KUDUPUDI</span><a href="#home">BACK TO TOP ↑</a><span>© {new Date().getFullYear()}</span></footer>
