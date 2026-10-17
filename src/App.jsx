@@ -73,7 +73,7 @@ function App() {
       <section className="section wrap skills-section" id="skills">
         <div className="section-label"><span>02</span> / TOOLKIT</div>
         <div className="skills-heading"><h2>Tools I’m using<br/><span>to grow.</span></h2><p>A practical foundation, built one concept and one project at a time.</p></div>
-        <div className="skill-list">{skills.map((skill, i) => <div className="skill-chip" key={skill}><span className="skill-number">0{i + 1}</span>{skill}<ArrowUpRight size={14}/></div>)}</div>
+        <ul className="skill-list" aria-label="Skills and tools">{skills.map((skill, i) => <li className="skill-chip" key={skill}><span className="skill-number">{String(i + 1).padStart(2, '0')}</span><span className="skill-name">{skill}</span></li>)}</ul>
       </section>
 
       <section className="section wrap work-section" id="work">
