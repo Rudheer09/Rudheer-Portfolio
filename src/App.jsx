@@ -7,7 +7,7 @@ const projects = [
   { n: '02', type: 'DSA CAPSTONE', title: 'DSA Capstone Project', desc: 'A team project: a working prototype designed to help prevent drones from colliding.', tags: ['Java', 'Data structures & algorithms'], mark: 'SAFE FLIGHT', color: 'mint', url: 'https://github.com/Rudheer09/Team-3-DSA-Capstone-Project' },
   { n: '03', type: 'WEB DEVELOPMENT', title: 'Portfolio', desc: 'My responsive personal portfolio showcasing my skills, projects, and development journey.', tags: ['React', 'Responsive UI'], mark: 'PORTFOLIO', color: 'peach', url: 'https://github.com/Rudheer09/Rudheer-Portfolio' },
 ]
-const skills = ['HTML & CSS', 'JavaScript', 'React', 'Java', 'Git & GitHub', 'Python', 'UI layout', 'Responsive design']
+const skills = ['HTML & CSS', 'JavaScript', 'React', 'Java', 'Data Structures & Algorithms', 'Object-Oriented Programming', 'Git & GitHub', 'Python', 'SQL & SQLite', 'UI/UX Fundamentals', 'Responsive Design', 'Problem Solving']
 
 function App() {
   const [copied, setCopied] = useState(false)
@@ -73,7 +73,7 @@ function App() {
       <section className="section wrap skills-section" id="skills">
         <div className="section-label"><span>02</span> / TOOLKIT</div>
         <div className="skills-heading"><h2>Tools I’m using<br/><span>to grow.</span></h2><p>A practical foundation, built one concept and one project at a time.</p></div>
-        <ul className="skill-list" aria-label="Skills and tools">{skills.map((skill, i) => <li className="skill-chip" key={skill}><span className="skill-number">{String(i + 1).padStart(2, '0')}</span><span className="skill-name">{skill}</span></li>)}</ul>
+        <div className="skill-list">{skills.map((skill, i) => <div className="skill-chip" key={skill}><span className="skill-number">{String(i + 1).padStart(2, '0')}</span><span>{skill}</span></div>)}</div>
       </section>
 
       <section className="section wrap work-section" id="work">
