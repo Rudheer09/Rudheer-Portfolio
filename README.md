@@ -1,24 +1,29 @@
-# Rudheer Kudupudi — Portfolio
+# Rudheer Kudupudi — React Portfolio
 
-A responsive personal portfolio built with HTML, CSS, and vanilla JavaScript.
+A responsive portfolio built with React, Vite, and Lucide icons. GitHub Actions builds the React app and deploys the generated `dist/` folder to GitHub Pages.
 
-## Files
-- `index.html` — page content and Google Fonts imports
-- `style.css` — layout, responsive styling, and typography
-- `script.js` — mobile navigation, copy-email button, and footer year
-- `.github/workflows/deploy.yml` — GitHub Actions deployment workflow for GitHub Pages
+## Deploy to GitHub Pages
 
-## Deploy with GitHub Actions
-1. Upload all files and folders in this ZIP to the root of your GitHub repository, preserving the `.github/workflows/deploy.yml` path.
-2. Commit and push the files to the `main` branch.
-3. In the repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
-4. Open **Actions** and wait for **Deploy Portfolio to GitHub Pages** to finish successfully.
-5. Visit `https://rudheer09.github.io/Rudheer-Portfolio/`.
+1. Extract this ZIP.
+2. Upload the **contents** of this folder (including `src/`, `.github/`, `package.json`, `index.html`, and `vite.config.js`) to the root of your repository named `Rudheer-Portfolio`.
+3. Commit the files to the `main` branch.
+4. In **Settings → Pages**, set **Source** to **GitHub Actions**.
+5. Open **Actions** and wait for **Deploy React Portfolio to GitHub Pages** to finish successfully.
+6. Visit `https://rudheer09.github.io/Rudheer-Portfolio/`.
 
-The headings use Space Grotesk and body text uses Inter (loaded from Google Fonts); DM Mono is used for small technical labels. The page still uses fallback fonts if Google Fonts cannot load.
+The workflow installs packages, runs the production build, and deploys `dist`. The Vite base path is configured for the repository URL above. If you rename the repository, update `base` in `vite.config.js` to match.
 
-Before using this as a professional portfolio, replace starter project descriptions with your actual completed work.
+## Run locally
 
+Install Node.js 20+ or 22, then run:
 
-## Update the deployed website
-Upload/replace `index.html`, `style.css`, and `script.js` in the repository root. Keep `.github/workflows/deploy.yml` in place. Commit to `main`, then check the **Actions** tab for a successful deployment. The contact copy-email button is styled teal with dark text.
+```bash
+npm install
+npm run dev
+```
+
+## Before submitting
+
+- Confirm project descriptions reflect your real work; the Attendance Companion and Mobile Racing Dashboard are currently presented as concepts.
+- Test the email button, social links, and mobile layout after deployment.
+- Keep `index.html` and `package.json` at the repository root; do not upload only the contents of `src/`.
