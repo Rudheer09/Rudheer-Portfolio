@@ -1,21 +1,25 @@
 # Rudheer Kudupudi — React Portfolio
 
-A responsive portfolio built with React, Vite, and Lucide icons. GitHub Actions builds the React app and deploys the generated `dist/` folder to GitHub Pages.
+A responsive personal portfolio built with React and Vite. The contact section uses email and social links only; **there is no contact form or “Send a Message” section** in `src/App.jsx`.
 
-## Deploy to GitHub Pages
+## Deploy to GitHub Pages with GitHub Actions
 
-1. Extract this ZIP.
-2. Upload the **contents** of this folder (including `src/`, `.github/`, `package.json`, `index.html`, and `vite.config.js`) to the root of your repository named `Rudheer-Portfolio`.
-3. Commit the files to the `main` branch.
-4. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-5. Open **Actions** and wait for **Deploy React Portfolio to GitHub Pages** to finish successfully.
-6. Visit `https://rudheer09.github.io/Rudheer-Portfolio/`.
+> Important: To remove the old “Send a Message” form from the live site, replace the old website files with this React project. Uploading new files on top of old files does not delete leftover files.
 
-The workflow installs packages, runs the production build, and deploys `dist`. The Vite base path is configured for the repository URL above. If you rename the repository, update `base` in `vite.config.js` to match.
+1. Download and extract this ZIP.
+2. Open the extracted `Rudheer_React_Portfolio` folder.
+3. In your GitHub repository `Rudheer-Portfolio`, remove the old portfolio files/folders that are not part of this React project (especially any old `index.html`, `style.css`, `script.js`, and old website folders). Do not delete the repository itself.
+4. Upload the **contents** of this folder to the repository root. The root must contain `index.html`, `package.json`, `vite.config.js`, `src/`, and `.github/workflows/deploy.yml`.
+5. Commit the changes to the `main` branch.
+6. Open **Settings → Pages** and set **Source** to **GitHub Actions**.
+7. Open **Actions** and wait for **Deploy React Portfolio to GitHub Pages** to finish with a green check.
+8. Open https://rudheer09.github.io/Rudheer-Portfolio/ and hard-refresh with `Ctrl + F5`.
+
+The workflow installs dependencies, builds the React app, and publishes the `dist/` folder. `vite.config.js` is configured for the repository URL above. If you rename the repository, update its `base` path.
 
 ## Run locally
 
-Install Node.js 20+ or 22, then run:
+Install Node.js 20 or newer, then run:
 
 ```bash
 npm install
@@ -24,6 +28,5 @@ npm run dev
 
 ## Before submitting
 
-- Confirm project descriptions reflect your real work; the Attendance Companion and Mobile Racing Dashboard are currently presented as concepts.
-- Test the email button, social links, and mobile layout after deployment.
-- Keep `index.html` and `package.json` at the repository root; do not upload only the contents of `src/`.
+- Replace or verify project descriptions so they accurately reflect your real work. The Attendance Companion and Mobile Racing Dashboard are concepts, not completed products.
+- Test the email-copy button, social links, and responsive layout after deployment.
