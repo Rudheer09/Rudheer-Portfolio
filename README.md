@@ -18,3 +18,7 @@ A responsive personal portfolio built with HTML, CSS, and vanilla JavaScript.
 The headings use Space Grotesk and body text uses Inter (loaded from Google Fonts); DM Mono is used for small technical labels. The page still uses fallback fonts if Google Fonts cannot load.
 
 Before using this as a professional portfolio, replace starter project descriptions with your actual completed work.
+
+
+## Update the deployed website
+Upload/replace `index.html`, `style.css`, and `script.js` in the repository root. Keep `.github/workflows/deploy.yml` in place. Commit to `main`, then check the **Actions** tab for a successful deployment. The contact copy-email button is styled teal with dark text.
