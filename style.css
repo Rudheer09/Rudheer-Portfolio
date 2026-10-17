@@ -10,7 +10,7 @@
 :root{--heading-font:'Space Grotesk','Inter',sans-serif}
 h1,h2,h3,.brand,.button{font-family:var(--heading-font)}
 .hero h1,.section h2,.contact-content h2{font-weight:700;letter-spacing:-1.8px}
-.copy-email{background:rgba(255,255,255,.045)!important;color:#f4f5f8!important;border:1px solid #555d70!important;opacity:1!important;cursor:pointer}
-.copy-email:hover{background:rgba(110,231,216,.09)!important;border-color:var(--cyan)!important;color:#fff!important}
+.contact-actions .copy-email{appearance:none;-webkit-appearance:none;background:#6ee7d8!important;background-color:#6ee7d8!important;color:#0b0d12!important;border:1px solid #6ee7d8!important;opacity:1!important;cursor:pointer;box-shadow:none!important;text-shadow:none!important}
+.contact-actions .copy-email:hover{background:#8cf2e5!important;background-color:#8cf2e5!important;border-color:#8cf2e5!important;color:#0b0d12!important}
 .copy-email:focus-visible,.button:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 @media(max-width:620px){.hero h1{letter-spacing:-1.8px}.section h2,.contact-content h2{letter-spacing:-1px}}
