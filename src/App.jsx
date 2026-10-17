@@ -7,7 +7,7 @@ const projects = [
   { n: '02', type: 'DSA CAPSTONE', title: 'DSA Capstone Project', desc: 'A team project: a working prototype designed to help prevent drones from colliding.', tags: ['Java', 'Data structures & algorithms'], mark: 'SAFE FLIGHT', color: 'mint', url: 'https://github.com/Rudheer09/Team-3-DSA-Capstone-Project' },
   { n: '03', type: 'WEB DEVELOPMENT', title: 'Portfolio', desc: 'My responsive personal portfolio showcasing my skills, projects, and development journey.', tags: ['React', 'Responsive UI'], mark: 'PORTFOLIO', color: 'peach', url: 'https://github.com/Rudheer09/Rudheer-Portfolio' },
 ]
-const skills = ['HTML & CSS', 'JavaScript', 'React', 'Java', 'Data Structures & Algorithms', 'Object-Oriented Programming', 'Git & GitHub', 'Python', 'SQL & SQLite', 'UI/UX Fundamentals', 'Responsive Design', 'Problem Solving']
+const skills = ['HTML & CSS', 'JavaScript', 'React', 'Java', 'Data Structures & Algorithms', 'Git & GitHub', 'Python']
 
 function App() {
   const [copied, setCopied] = useState(false)
