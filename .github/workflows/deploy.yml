@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: github-pages
   cancel-in-progress: true
 
 jobs:
@@ -21,22 +21,37 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Setup Node
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+        continue-on-error: true
+
       - name: Install dependencies
         run: npm install
-      - name: Build React app
+
+      - name: Build production website
         run: npm run build
-      - name: Setup Pages
+
+      - name: Verify production files
+        run: |
+          test -f dist/index.html
+          test -d dist/assets
+          echo "Production HTML and bundled assets found."
+
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Upload build output
+
+      - name: Upload production build
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

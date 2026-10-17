@@ -1,32 +1,42 @@
 # Rudheer Kudupudi — React Portfolio
 
-A responsive personal portfolio built with React and Vite. The contact section uses email and social links only; **there is no contact form or “Send a Message” section** in `src/App.jsx`.
+A responsive React + Vite portfolio deployed to GitHub Pages through GitHub Actions.
 
-## Deploy to GitHub Pages with GitHub Actions
+## Deploy correctly (important)
 
-> Important: To remove the old “Send a Message” form from the live site, replace the old website files with this React project. Uploading new files on top of old files does not delete leftover files.
-
-1. Download and extract this ZIP.
-2. Open the extracted `Rudheer_React_Portfolio` folder.
-3. In your GitHub repository `Rudheer-Portfolio`, remove the old portfolio files/folders that are not part of this React project (especially any old `index.html`, `style.css`, `script.js`, and old website folders). Do not delete the repository itself.
-4. Upload the **contents** of this folder to the repository root. The root must contain `index.html`, `package.json`, `vite.config.js`, `src/`, and `.github/workflows/deploy.yml`.
-5. Commit the changes to the `main` branch.
-6. Open **Settings → Pages** and set **Source** to **GitHub Actions**.
+1. Extract this ZIP.
+2. Open the **contents** of `Rudheer_React_Portfolio` (not the outer folder itself).
+3. In `Rudheer09/Rudheer-Portfolio`, remove old website files and old deployment workflow files that conflict with this one. Keep only one Pages deployment workflow: `.github/workflows/deploy.yml` from this project.
+4. Upload the project contents to the repository root. At the root you should see `index.html`, `package.json`, `vite.config.js`, `src/`, and `.github/`.
+5. Commit the changes to `main`.
+6. In **Settings → Pages**, set **Source** to **GitHub Actions**.
 7. Open **Actions** and wait for **Deploy React Portfolio to GitHub Pages** to finish with a green check.
-8. Open https://rudheer09.github.io/Rudheer-Portfolio/ and hard-refresh with `Ctrl + F5`.
+8. Click the website URL shown in the successful deployment job.
 
-The workflow installs dependencies, runs `npm run build` (`vite build`, not the development server), and publishes the generated `dist/` folder. `vite.config.js` is configured for the repository URL above. If you rename the repository, update its `base` path.
+## Why the old page may still appear
 
-## Run locally
+The deployed site must be built from Vite's `dist/` directory. This workflow runs `npm run build`, verifies that `dist/index.html` and `dist/assets/` exist, and deploys only `dist/`. If the live site still shows the old design, open **Actions** and confirm the latest successful run is this workflow and that no other workflow is also deploying Pages. Do not upload `src/` or the source `index.html` as the published site manually; deploy the build artifact instead.
 
-Install Node.js 20 or newer, then run:
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Before submitting
+## Production build
 
-- Replace or verify project descriptions so they accurately reflect your real work. The Attendance Companion and Mobile Racing Dashboard are concepts, not completed products.
-- Test the email-copy button, social links, and responsive layout after deployment.
+```bash
+npm run build
+npm run preview
+```
+
+## Personal links
+
+- Email: rudheerkudupudi@gmail.com
+- GitHub: https://github.com/Rudheer09
+- LinkedIn: https://www.linkedin.com/in/rudheer-kudupudi-7837b241b
+
+## Project accuracy
+
+Some portfolio cards are concepts/work in progress, and are labelled as such. Update the descriptions as projects become real and have working demos or repositories.
