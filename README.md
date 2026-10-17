@@ -17,16 +17,15 @@ A responsive, single-page portfolio website built with HTML, CSS, and vanilla Ja
 2. Open `index.html` in a browser.
 3. Optional local server: run `python -m http.server 8000` inside this folder, then visit `http://localhost:8000`.
 
-## Deploy with GitHub Pages
-1. Sign in to GitHub and create a **new public repository** named `rudheer-portfolio` (or another name you prefer).
-2. Extract this ZIP file and upload **the contents of the `rudheer_portfolio` folder** to the repository root. Make sure `index.html`, `style.css`, and `script.js` are at the root—not inside another nested folder.
-3. Open the repository's **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select branch **main** and folder **/(root)**, then click **Save**.
-6. Wait for the Pages deployment to finish. The public URL will usually be `https://YOUR-GITHUB-USERNAME.github.io/REPOSITORY-NAME/`.
-7. Open that URL on desktop and mobile and test every navigation and profile link.
+## Deploy with GitHub Actions (GitHub Pages)
+1. Create or open your GitHub repository. Keep `index.html`, `style.css`, and `script.js` directly in the repository root.
+2. Upload the entire contents of this folder, including the hidden `.github/workflows/deploy.yml` file, and commit them to the `main` branch.
+3. Open **Settings → Pages**. Under **Build and deployment → Source**, choose **GitHub Actions**.
+4. Open the **Actions** tab. The **Deploy Portfolio to GitHub Pages** workflow should start automatically after you push to `main`. If it does not, open that workflow and choose **Run workflow**.
+5. Wait for the workflow to finish successfully (green checkmark). The portfolio URL will be `https://YOUR-GITHUB-USERNAME.github.io/REPOSITORY-NAME/`.
+6. If deployment fails, open the failed run and inspect the first red step for the error. Confirm that Pages is enabled and that the workflow file is at `.github/workflows/deploy.yml`.
 
-If you use the repository name `Rudheer09.github.io`, the site URL will usually be `https://Rudheer09.github.io/`. Otherwise, use the project-site URL format above. GitHub Pages may take a few minutes to publish after the first save.
+For the repository `Rudheer-Portfolio` under `Rudheer09`, the expected URL is `https://rudheer09.github.io/Rudheer-Portfolio/`. GitHub may take a few minutes to publish after the first deployment.
 
 ## Checklist self-review
 - [x] Home / introduction section
