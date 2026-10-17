@@ -16,9 +16,7 @@ Responsive personal portfolio built with React and Vite for the Beginner UI/UX p
 
 ## Contact form email delivery
 
-The form uses FormSubmit's AJAX endpoint to send messages to `rudheerkudupudi@gmail.com`. This is a third-party form-to-email service; no email password or API key is placed in the frontend.
-
-**One-time setup is required:** after deployment, submit a test message from the live form. FormSubmit may send an activation/confirmation email to `rudheerkudupudi@gmail.com`. Open that email and confirm the form. Check spam/junk if it does not arrive. Until the service is activated, email delivery may not work. Test the form again after activation. The website displays a success or error message, and the email link remains available as a fallback.
+The contact form uses a `mailto:` link to open the visitor's default email application with the recipient, subject, and message pre-filled. This avoids third-party form activation and does not require an API key. The visitor must press Send in their email application; if no email app is configured, they can use the email address shown on the page. Because this is a static website, the form does not send email silently from the browser.
 
 ## Deploy to GitHub Pages
 

@@ -26,35 +26,13 @@ function App() {
   }
   const closeMenu = () => setMenuOpen(false)
   const updateForm = (event) => setForm({ ...form, [event.target.name]: event.target.value })
-  const submitContact = async (event) => {
+  const submitContact = (event) => {
     event.preventDefault()
-    setSending(true)
-    setFormStatus({ type: '', message: '' })
-    try {
-      const response = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          subject: form.subject || 'Portfolio contact message',
-          message: form.message,
-          _subject: `Portfolio contact: ${form.subject || 'New message'}`,
-          _template: 'table',
-          _captcha: 'true',
-        }),
-      })
-      const result = await response.json()
-      if (!response.ok || String(result.success).toLowerCase() === 'false' || result.success === 0) {
-        throw new Error(result.message || 'The message could not be sent. Please try again or email me directly.')
-      }
-      setFormStatus({ type: 'success', message: 'Thanks! Your message was sent. I’ll get back to you soon.' })
-      setForm({ name: '', email: '', subject: '', message: '' })
-    } catch (error) {
-      setFormStatus({ type: 'error', message: error.message || 'Could not send the message. Please email me directly at ' + EMAIL + '.' })
-    } finally {
-      setSending(false)
-    }
+    const subject = form.subject.trim() || 'Portfolio contact message'
+    const body = `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
+    const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    setFormStatus({ type: 'success', message: 'Your email app should open with the message ready. Please press Send there to deliver it.' })
+    window.location.href = mailto
   }
 
   return <>
@@ -121,7 +99,7 @@ function App() {
               </div>
               <label>Subject<input name="subject" value={form.subject} onChange={updateForm} maxLength={150} placeholder="What would you like to discuss?" /></label>
               <label>Message *<textarea name="message" value={form.message} onChange={updateForm} required minLength={10} maxLength={5000} rows={5} placeholder="Write your message here..." /></label>
-              <div className="form-submit-row"><button className="button button-primary" type="submit" disabled={sending}>{sending ? 'Sending…' : 'Send message'} <ArrowUpRight size={16}/></button><span className="form-privacy">Your message will be emailed to Rudheer.</span></div>
+              <div className="form-submit-row"><button className="button button-primary" type="submit" disabled={sending}>{sending ? 'Sending…' : 'Send message'} <ArrowUpRight size={16}/></button><span className="form-privacy">Opens your email app so you can send the message.</span></div>
               {formStatus.message && <p className={`form-status ${formStatus.type}`} role="status" aria-live="polite">{formStatus.message}</p>}
             </form>
           </div>
