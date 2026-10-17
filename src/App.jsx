@@ -3,9 +3,9 @@ import { ArrowDownRight, ArrowUpRight, Github, Linkedin, Mail, Copy, Check, Code
 
 const EMAIL = 'rudheerkudupudi@gmail.com'
 const projects = [
-  { n: '01', type: 'WEB DEVELOPMENT', title: 'Personal Portfolio', desc: 'A responsive personal brand website focused on clear storytelling, accessible contrast, and a confident visual system.', tags: ['React', 'Responsive UI'], mark: 'PORTFOLIO', color: 'lavender' },
-  { n: '02', type: 'PRODUCT CONCEPT', title: 'Attendance Companion', desc: 'A concept for tracking attendance and estimating leave eligibility from a student timetable.', tags: ['UX thinking', 'Dashboard'], mark: 'TRACK / PLAN', color: 'mint' },
-  { n: '03', type: 'INTERACTION CONCEPT', title: 'Mobile Racing Dashboard', desc: 'A concept for a customizable phone dashboard with accelerator, brake, and telemetry-style controls for racing games.', tags: ['Interaction design', 'Prototype idea'], mark: 'DRIVE MODE', color: 'peach' },
+  { n: '01', type: 'JAVASCRIPT', title: 'JavaScript', desc: 'JavaScript practice and development work from my learning journey.', tags: ['JavaScript', 'Web development'], mark: 'JS / BUILD', color: 'lavender', url: 'https://github.com/Rudheer09/tkmagesh' },
+  { n: '02', type: 'DSA CAPSTONE', title: 'DSA Capstone Project', desc: 'A team project: a working prototype designed to help prevent drones from colliding.', tags: ['Java', 'Data structures & algorithms'], mark: 'SAFE FLIGHT', color: 'mint', url: 'https://github.com/Rudheer09/Team-3-DSA-Capstone-Project' },
+  { n: '03', type: 'WEB DEVELOPMENT', title: 'Portfolio', desc: 'My responsive personal portfolio showcasing my skills, projects, and development journey.', tags: ['React', 'Responsive UI'], mark: 'PORTFOLIO', color: 'peach', url: 'https://github.com/Rudheer09/Rudheer-Portfolio' },
 ]
 const skills = ['HTML & CSS', 'JavaScript', 'React', 'Java', 'Git & GitHub', 'Python', 'UI layout', 'Responsive design']
 
@@ -79,12 +79,12 @@ function App() {
       <section className="section wrap work-section" id="work">
         <div className="section-label"><span>03</span> / SELECTED WORK</div>
         <div className="work-heading"><h2>Ideas in progress<span className="accent">.</span></h2><p>A few projects and concepts that reflect what I’m exploring right now.</p></div>
-        <div className="project-grid">{projects.map(project => <article className={`project-card ${project.color}`} key={project.n}>
+        <div className="project-grid">{projects.map(project => <a className={`project-card ${project.color}`} key={project.n} href={project.url} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} repository on GitHub`}>
           <div className="project-top"><span>{project.n} / {project.type}</span><span className="project-arrow"><ArrowUpRight size={19}/></span></div>
           <div className="project-art"><span className="project-art-label">{project.mark}</span><div className="art-lines"><i/><i/><i/></div><span className="art-square"/></div>
           <div className="project-info"><h3>{project.title}</h3><p>{project.desc}</p><div className="tag-row">{project.tags.map(tag => <span className="tag" key={tag}>{tag}</span>)}</div></div>
-        </article>)}</div>
-        <p className="project-note"><span className="note-star">✳</span> Some entries are concepts or work in progress. I’ll add live demos and repositories as they’re ready.</p>
+        </a>)}</div>
+        <p className="project-note"><span className="note-star">✳</span> Select any project to open its GitHub repository in a new tab.</p>
       </section>
 
       <section className="section wrap contact-section" id="contact">
