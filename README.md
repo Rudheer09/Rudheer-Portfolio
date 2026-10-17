@@ -15,7 +15,7 @@ A responsive personal portfolio built with React and Vite. The contact section u
 7. Open **Actions** and wait for **Deploy React Portfolio to GitHub Pages** to finish with a green check.
 8. Open https://rudheer09.github.io/Rudheer-Portfolio/ and hard-refresh with `Ctrl + F5`.
 
-The workflow installs dependencies, builds the React app, and publishes the `dist/` folder. `vite.config.js` is configured for the repository URL above. If you rename the repository, update its `base` path.
+The workflow installs dependencies, runs `npm run build` (`vite build`, not the development server), and publishes the generated `dist/` folder. `vite.config.js` is configured for the repository URL above. If you rename the repository, update its `base` path.
 
 ## Run locally
 
