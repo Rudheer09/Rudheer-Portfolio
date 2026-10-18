@@ -1,20 +1,20 @@
 # Rudheer Kudupudi — Personal Portfolio
 
-A responsive personal portfolio website built with React and Vite to showcase my background, technical skills, projects, and contact information.
+A responsive personal portfolio built with **React and Vite** to showcase my introduction, technical skills, project concepts, and contact information.
 
 ## Website Sections
 
 ### 1. Home
-- Personal introduction and portfolio landing section.
-- Dark visual theme with mint accents and modern typography.
-- Navigation to the main sections of the website.
+- Personal introduction and landing section.
+- Dark theme with mint accents and modern typography.
+- Navigation to the main portfolio sections.
 
 ### 2. About
-- Brief introduction about me and my development journey.
-- Focus on learning, building projects, and improving my technical skills.
+- Introduction to my background and development journey.
+- Focus on learning, building projects, and developing technical skills.
 
 ### 3. Skills
-The website displays these seven skills:
+The portfolio showcases these seven skills:
 
 - HTML & CSS
 - JavaScript
@@ -25,72 +25,49 @@ The website displays these seven skills:
 - Python
 
 ### 4. Projects — Ideas in Progress
-The website displays three project cards:
 
-- **Personal Portfolio:** A responsive personal website focused on clear presentation and visual design.
-- **Attendance Companion:** A concept for tracking attendance and estimating leave eligibility using a student timetable.
-- **Mobile Racing Dashboard:** A concept for using a phone as a customizable racing-game dashboard with accelerator, brake, and telemetry-style controls.
+The website features three project cards:
 
-The cards are intended to link to GitHub repositories. Project concepts are labelled as work in progress rather than being presented as completed products.
+- **Personal Portfolio:** A responsive website showcasing my profile, skills, and projects.
+- **Attendance Companion:** A project concept for tracking class attendance and estimating attendance eligibility.
+- **Mobile Racing Dashboard:** A project concept for using a phone as a customizable dashboard and control interface for racing games.
+
+Project concepts are identified as works in progress rather than completed products.
 
 ### 5. Contact
 - Contact form with name, email, subject, and message fields.
-- Form validation and feedback states.
-- Email address displayed on the page.
-- GitHub and LinkedIn links.
+- Form validation and feedback messages.
+- Email address, GitHub, and LinkedIn links.
 - Copy-email functionality.
 
-The contact form opens the visitor's default email application with the message pre-filled. The visitor must send the email from that application.
+The contact form opens the visitor's default email application with the recipient and message pre-filled. The visitor must send the email from that application.
 
 ## Design and Accessibility
 
-- Responsive desktop, tablet, and mobile layout.
+- Responsive layouts for desktop, tablet, and mobile.
 - Dark interface with mint accent colours.
-- Consistent spacing, borders, and typography.
-- Keyboard-focus styling.
-- Semantic form labels and readable contrast.
+- Consistent typography, spacing, and visual styling.
+- Keyboard-focus indicators.
+- Semantic form labels and readable colour contrast.
 - Reduced-motion support.
 
-## Technologies
+## Technologies Used
 
 - React
 - JavaScript
-- HTML
-- CSS
+- HTML5
+- CSS3
 - Vite
 - Git and GitHub
-- GitHub Pages with GitHub Actions
-
-## Run Locally
-
-Prerequisites: Node.js and npm.
-
-```bash
-git clone https://github.com/Rudheer09/Rudheer-Portfolio.git
-cd Rudheer-Portfolio
-npm install
-npm run dev
-```
-
-## Production Build
-
-```bash
-npm run build
-npm run preview
-```
-
-Vite generates the production files in the `dist/` directory.
-
-## Live Website
-
-https://rudheer09.github.io/Rudheer-Portfolio/
+- GitHub Actions for deployment
 
 ## Links
 
+- **Live Portfolio:** https://rudheer09.github.io/Rudheer-Portfolio/
 - **GitHub:** https://github.com/Rudheer09
 - **LinkedIn:** https://www.linkedin.com/in/rudheer-kudupudi-7837b241b
 - **Email:** rudheerkudupudi@gmail.com
 
 ---
 
-*This portfolio represents my current skills, project ideas, and ongoing progress as a developer.*
+*This portfolio showcases my current skills, project concepts, and ongoing development journey.*
