@@ -1,73 +1,51 @@
-# Rudheer Kudupudi — Personal Portfolio
+# Rudheer Kudupudi — React Portfolio
 
-A responsive personal portfolio built with **React and Vite** to showcase my introduction, technical skills, project concepts, and contact information.
+Responsive personal portfolio built with React and Vite for the Beginner UI/UX portfolio task.
 
-## Website Sections
+## Included task elements
 
-### 1. Home
-- Personal introduction and landing section.
-- Dark theme with mint accents and modern typography.
-- Navigation to the main portfolio sections.
+- Home / introduction
+- About section
+- Skills and tools
+- Selected projects, with concepts clearly labelled as concepts/work in progress
+- Contact section with a message form, email, GitHub, and LinkedIn
+- Form validation, sending state, and success/error feedback
+- Responsive desktop, tablet, and mobile styling
+- Semantic form labels, keyboard-focus styling, readable contrast, and reduced-motion support
+- Production build and GitHub Actions workflow deploying Vite's generated `dist/` directory to GitHub Pages
 
-### 2. About
-- Introduction to my background and development journey.
-- Focus on learning, building projects, and developing technical skills.
+## Contact form email delivery
 
-### 3. Skills
-The portfolio showcases these seven skills:
+The contact form uses a `mailto:` link to open the visitor's default email application with the recipient, subject, and message pre-filled. This avoids third-party form activation and does not require an API key. The visitor must press Send in their email application; if no email app is configured, they can use the email address shown on the page. Because this is a static website, the form does not send email silently from the browser.
 
-- HTML & CSS
-- JavaScript
-- React
-- Java
-- Data Structures & Algorithms
-- Git & GitHub
-- Python
+## Deploy to GitHub Pages
 
-### 4. Projects — Ideas in Progress
+1. Extract this ZIP.
+2. Upload the contents of the inner `Rudheer_React_Portfolio` folder to the root of `https://github.com/Rudheer09/Rudheer-Portfolio`. The root should contain `index.html`, `package.json`, `vite.config.js`, `src/`, and `.github/workflows/deploy.yml`.
+3. Remove any other GitHub Pages deployment workflow that might overwrite this one; keep this single Pages workflow.
+4. Commit the changes to `main`.
+5. In **Settings → Pages**, choose **GitHub Actions** as the source.
+6. In **Actions**, wait for **Deploy React Portfolio to GitHub Pages** to complete successfully.
+7. Open `https://rudheer09.github.io/Rudheer-Portfolio/` and test the navigation, mobile layout, links, and contact form.
 
-The website features three project cards:
+Vite generates hashed CSS and JavaScript asset names for each production build. The workflow deploys the generated production output rather than the source HTML.
 
-- **Personal Portfolio:** A responsive website showcasing my profile, skills, and projects.
-- **Attendance Companion:** A project concept for tracking class attendance and estimating attendance eligibility.
-- **Mobile Racing Dashboard:** A project concept for using a phone as a customizable dashboard and control interface for racing games.
+## Local development
 
-Project concepts are identified as works in progress rather than completed products.
+```bash
+npm install
+npm run dev
+```
 
-### 5. Contact
-- Contact form with name, email, subject, and message fields.
-- Form validation and feedback messages.
-- Email address, GitHub, and LinkedIn links.
-- Copy-email functionality.
+## Verify a production build
 
-The contact form opens the visitor's default email application with the recipient and message pre-filled. The visitor must send the email from that application.
+```bash
+npm run build
+npm run preview
+```
 
-## Design and Accessibility
+## Profile links
 
-- Responsive layouts for desktop, tablet, and mobile.
-- Dark interface with mint accent colours.
-- Consistent typography, spacing, and visual styling.
-- Keyboard-focus indicators.
-- Semantic form labels and readable colour contrast.
-- Reduced-motion support.
-
-## Technologies Used
-
-- React
-- JavaScript
-- HTML5
-- CSS3
-- Vite
-- Git and GitHub
-- GitHub Actions for deployment
-
-## Links
-
-- **Live Portfolio:** https://rudheer09.github.io/Rudheer-Portfolio/
-- **GitHub:** https://github.com/Rudheer09
-- **LinkedIn:** https://www.linkedin.com/in/rudheer-kudupudi-7837b241b
-- **Email:** rudheerkudupudi@gmail.com
-
----
-
-*This portfolio showcases my current skills, project concepts, and ongoing development journey.*
+- Email: rudheerkudupudi@gmail.com
+- GitHub: https://github.com/Rudheer09
+- LinkedIn: https://www.linkedin.com/in/rudheer-kudupudi-7837b241b
